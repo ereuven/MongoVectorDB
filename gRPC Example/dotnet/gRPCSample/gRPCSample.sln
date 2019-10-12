@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCSample", "gRPCSample\gRPCSample.csproj", "{A6088ED7-0AE1-4B35-82EF-65A940010822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCSampleServer", "gRPCSampleServer\gRPCSampleServer.csproj", "{C3B36B13-CD36-4AE7-8C73-2A711E0B7E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCSampleClient", "gRPCSampleClient\gRPCSampleClient.csproj", "{91F485FA-AE47-48A5-81A3-C1F03859A33D}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ProtosShared", "ProtosShared\ProtosShared.shproj", "{FB8DB70E-C66E-492F-AB43-290F542345BD}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ProtosShared\ProtosShared.projitems*{91f485fa-ae47-48a5-81a3-c1f03859a33d}*SharedItemsImports = 4
+		ProtosShared\ProtosShared.projitems*{c3b36b13-cd36-4ae7-8c73-2a711e0b7e4e}*SharedItemsImports = 4
+		ProtosShared\ProtosShared.projitems*{fb8db70e-c66e-492f-ab43-290f542345bd}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6088ED7-0AE1-4B35-82EF-65A940010822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6088ED7-0AE1-4B35-82EF-65A940010822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6088ED7-0AE1-4B35-82EF-65A940010822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6088ED7-0AE1-4B35-82EF-65A940010822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B36B13-CD36-4AE7-8C73-2A711E0B7E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B36B13-CD36-4AE7-8C73-2A711E0B7E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B36B13-CD36-4AE7-8C73-2A711E0B7E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B36B13-CD36-4AE7-8C73-2A711E0B7E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F485FA-AE47-48A5-81A3-C1F03859A33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F485FA-AE47-48A5-81A3-C1F03859A33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F485FA-AE47-48A5-81A3-C1F03859A33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F485FA-AE47-48A5-81A3-C1F03859A33D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95CC9E79-26FE-42E2-A299-A55086CD78BB}
+	EndGlobalSection
+EndGlobal

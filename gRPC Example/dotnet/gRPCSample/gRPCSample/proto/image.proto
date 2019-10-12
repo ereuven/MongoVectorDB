@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+//my service is called PingPongService
+service ImageService {
+    //an example of getting a feature
+    rpc save(StreamBytes) returns (EmptyResponse) {}
+}
+
+message StreamBytes {
+  repeated Image Images = 1;
+};
+
+message Image {
+  string name = 1;
+  bytes data = 2;
+}
+
+message EmptyResponse {
+
+}
