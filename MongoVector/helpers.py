@@ -3,17 +3,9 @@ from bson.binary import Binary
 import pickle
 
 
-def normalize_num(x, min_val, max_val):
-    return (x - min_val) / (max_val - min_val)
+def nparray_to_bin(nparr: np.ndarray, protocl=pickle.HIGHEST_PROTOCOL) -> Binary:
+    return Binary(pickle.dumps(nparr, protocol=protocl))
 
 
-def normalize_vec(vec):
-    return vec / np.linalg.norm(vec)
-
-
-def nparray_to_bin(nparr):
-    return Binary(pickle.dumps(nparr, protocol=2), subtype=128)
-
-
-def bin_to_nparray(binary):
+def bin_to_nparray(binary: Binary) -> np.ndarray:
     return pickle.loads(binary)
