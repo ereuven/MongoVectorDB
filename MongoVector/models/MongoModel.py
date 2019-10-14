@@ -2,6 +2,7 @@ __all__ = ['MongoModel']
 
 from bson import ObjectId
 
+
 class MongoModel(dict):
     """
     A simple model that wraps mongodb document

@@ -4,6 +4,7 @@ import pymongo
 from MongoVector.models.Vector import Vector
 from MongoVector.MongoVectorDB import MongoVectorDB
 from MongoVector.models.MongoModel import MongoModel
+from MongoVector.models.VectorField import VectorField
 import numpy as np
 from pprint import pprint
 
@@ -21,30 +22,40 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 # print('*')
 
 client = pymongo.MongoClient('localhost', 27017)
-db = MongoVectorDB(client, 'vecdb', 'vectors', 'centroids', 0.701, 'euclidean')
+
+vf1 = 'res111'
+vf2 = 'res222'
+
+db = MongoVectorDB(client, 'vecdb', 'vectors', 'centroids', {
+    vf1: VectorField('euclidean', 0.701),
+    vf2: VectorField('cosine', 0.001)
+})
 
 vectors = []
 v = Vector({'name': 'vector 1'})
-v.set_vector(np.asarray([1, 2, 3]))
+v.set_vector(np.asarray([1, 2, 3]), vf1)
+v.set_vector(np.asarray([1, 2, 3]), vf2)
 vectors.append(v)
 
 v = Vector({'name': 'vector 2'})
-v.set_vector(np.asarray([4, 5, 6]))
+v.set_vector(np.asarray([4, 5, 6]), vf1)
+v.set_vector(np.asarray([4, 5, 6]), vf2)
 vectors.append(v)
 
 v = Vector({'name': 'vector 3'})
-v.set_vector(np.asarray([40, 50, 60]))
+v.set_vector(np.asarray([40, 50, 60]), vf1)
+v.set_vector(np.asarray([40, 50, 60]), vf2)
 vectors.append(v)
-#
+
+v = Vector({'name': 'vector 4'})
+v.set_vector(np.asarray([40.2, 49.5, 60.3]), vf1)
+v.set_vector(np.asarray([40.2, 49.5, 60.3]), vf2)
+vectors.append(v)
 #print(db.index(vectors))
 
-# v = Vector({'name': 'vector 4'})
-# v.set_vector(np.asarray([40.2, 49.5, 60.3]))
-# print(db.index([v]))
-
-#q = np.asarray([1.0001, 2.00002, 3.00003])
-q = np.asarray([40.5,50,60])
-pprint(list(db.search(q)))
+#q = np.asarray([40.5, 50, 60])
+q = np.asarray([40, 50, 60])
+pprint(list(db.search(vf2, q)))
 
 
 # class MyDoc(MongoModel):
