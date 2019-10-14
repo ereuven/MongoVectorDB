@@ -25,3 +25,10 @@ class Vector(MongoModel):
 
     def set_closest_centroid(self, field_name: str, centroid_id: ObjectId):
         self[Vector.closest_centroid_id_fieldname(field_name)] = centroid_id
+
+    def contains_fields(self, *field_names):
+        for fn in field_names:
+            if not self.__contains__(fn):
+                return False
+
+        return True

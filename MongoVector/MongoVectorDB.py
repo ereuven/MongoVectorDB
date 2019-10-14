@@ -56,6 +56,9 @@ class MongoVectorDB:
         self._centroids_collection = self._db[self._centroids_collection_name]
 
     def index(self, vectors: List[Vector]) -> List[ObjectId]:
+        for i, v in enumerate(vectors):
+            assert v.contains_fields(*self._vector_fields.keys()), 'vectors[{}] does not contains all fields'.format(i)
+
         centroids_collection = self._get_all_centroids_by_fieldname()
 
         _ids = []
@@ -77,6 +80,8 @@ class MongoVectorDB:
         return _ids
 
     def search(self, field_name: str, query_vector: np.ndarray, n=10):
+        assert field_name in self._vector_fields.keys(), "'{}' not in vector fields".format(field_name)
+
         centroids, centroids_vec_matrix = self._get_field_centroids(field_name)
         min_cidx = self._get_closest_centroid_idx(query_vector, centroids_vec_matrix, field_name)
 
