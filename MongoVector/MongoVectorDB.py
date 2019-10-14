@@ -111,9 +111,9 @@ class MongoVectorDB:
 
     def _get_closest_vectors(self, query_vector, vectors_matrix, n):
         if vectors_matrix.shape[1] == 0:
-            return None
+            return []
 
         distances = cdist(vectors_matrix, query_vector.reshape((1, -1)), self._distance_function_name).reshape(-1)
         indxs_min = np.argsort(distances)[:n]
 
-        return list(zip(indxs_min, distances[indxs_min]))
+        return zip(indxs_min, distances[indxs_min])
