@@ -38,6 +38,10 @@ vectors.append(v)
 #
 #print(db.index(vectors))
 
+# v = Vector({'name': 'vector 4'})
+# v.set_vector(np.asarray([40.2, 49.5, 60.3]))
+# print(db.index([v]))
+
 #q = np.asarray([1.0001, 2.00002, 3.00003])
 q = np.asarray([40.5,50,60])
 pprint(list(db.search(q)))
