@@ -1,0 +1,21 @@
+C:\Users\Reuven\AppData\Local\Programs\Python\Python37\python.exe D:/Dropbox/Projects/kmeans_pytorch/test.py
+  0%|          | 0/7 [00:00<?, ?it/s]N        : 500000
+D        : 512
+K        : 77460
+BULK_SIZE: 77460
+CPUS     : 15
+
+running k-means
+100%|██████████| 7/7 [3:59:55<00:00, 2056.57s/it]
+# centroids: {} 77460
+k-means (100000000, 512) took: 14395.957 seconds
+
+
+Computing label assignment and total inertia
+predict 30 samples took 0.247 seconds
+predictions:
+[  153 12941  2031 21851  2710  3796  2070 10567 13152  2191  2933  7648
+  2093  6279  9643 10219 12288  1976  2446  1037   912  1845 12663  3740
+  7040  1964  9649 23996 10219  9548]
+
+Process finished with exit code 0

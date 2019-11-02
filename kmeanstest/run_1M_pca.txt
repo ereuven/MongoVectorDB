@@ -1,0 +1,24 @@
+N        : 1000000
+D        : 512
+K        : 77460
+PCA_DIM  : 128
+BULK_SIZE: 77460
+CPUS     : 15
+
+
+running pca
+fit pca took 2.683 seconds
+  0%|          | 0/13 [00:00<?, ?it/s](1, 512)
+
+running k-means with pca
+100%|██████████| 13/13 [2:13:05<00:00, 614.30s/it]
+# centroids: {} 77460
+k-means (100000000, 512) took: 7985.926 seconds
+
+
+Computing label assignment and total inertia
+predict 30 samples took 0.072 seconds
+predictions:
+[67435  4765  6436  2217 76445   580 47853  1904 11789  2555 76476  7430
+  8257 75728 70534 74837  5099 51081  8679  3135  7412 62987 76954  4128
+  2503 16769  3304 71622  3306 16219]

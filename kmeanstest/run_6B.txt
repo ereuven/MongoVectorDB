@@ -1,0 +1,14 @@
+N        : 100000000
+D        : 512
+K        : 77460
+CREATE_VECTORS_BULK_SIZE: 10000
+#KMEANS_BULK_SIZE: 200000  (must be gt K)
+KMEANS_BULK_SIZE: K (must be gt K)
+CPUS     : 15
+
+create vectors took 03:02:00 hours
+cache.hdf5.lzf size - 191 GB
+
+PQ failed (memory allocation error)
+
+k-means took (dnf) - 130 - 300 hrs (5-12 days)

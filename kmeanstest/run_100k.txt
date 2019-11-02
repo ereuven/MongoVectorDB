@@ -1,0 +1,33 @@
+cache.hdf5.lzf - 196 MB
+
+N        : 100000
+D        : 512
+K        : 316
+BULK_SIZE: 10000
+CPUS     : 15
+
+generating vectors...
+100%|██████████| 10/10 [00:02<00:00,  3.77it/s]
+generating (100000, 512) vectors took 2.658 seconds
+
+trainig pq
+M: 4, Ks: 256, code_dtype: <class 'numpy.uint8'>
+iter: 20, seed: 123
+Training the subspace: 0 / 4
+Training the subspace: 1 / 4
+Training the subspace: 2 / 4
+Training the subspace: 3 / 4
+pq took 11.778 seconds
+
+running k-means
+100%|██████████| 10/10 [00:09<00:00,  1.06it/s]
+# centroids: {} 316
+k-means (100000, 512) took: 9.429 seconds
+
+
+predict 30 samples took 0.002 seconds
+predictions:
+[133  85  32 248 204 189 150 287 196 228 280 173 284 283 217  76 170 308
+ 308 133 223 217  22 146  45 293  86 300 187 304]
+
+Process finished with exit code 0
